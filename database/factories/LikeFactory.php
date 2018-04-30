@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Comment::class, function (Faker $faker) {
+$factory->define(App\Like::class, function (Faker $faker) {
     return [
       'user_id' => function(){
         return factory('App\User')->create()->id;
@@ -10,7 +10,5 @@ $factory->define(App\Comment::class, function (Faker $faker) {
       'post_id' => function(){
         return factory('App\Post')->create()->id;
       },
-
-      'comments' => $faker->text($maxNbChars = 200)
     ];
 });
