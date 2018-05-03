@@ -1,3 +1,10 @@
-# ProjectPemweb
-ProjectPemwebK KuyJalan ini adalah project kelompok yang berisikan Kevin Jonathan Harnanta , Insan Nurzamman, M.Yusuf Saputra
-isi dari proyek ini adalah membangun sebuah aplikasi berbasis web, tentang berbagi pengalaman orang-orang yang pernah berkunjung kesuatu tempat. 
+# Kuyjalan
+KuyJalan is web based application to inform the user about travelling place.
+Fungsionalitas : 
+1. Register (nama, username, email,password)
+2. Log in (username, password)
+3. Home (konten-konen orang yang ngepost article , dan search)
+4. Cek profil
+5. Poin(Setiap kali user ngepost article)
+6. Log out 
+7. Like, comment , share
