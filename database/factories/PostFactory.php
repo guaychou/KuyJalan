@@ -7,6 +7,9 @@ $factory->define(App\Post::class, function (Faker $faker) {
       'user_id' => function(){
         return factory('App\User')->create()->id;
       },
+      'wisata_id' => function(){
+        return factory('App\TempatWisata')->create()->id;
+      },
         'caption' => $faker->paragraph,
         'image' => 'posts/' . $faker->image('public/storage/posts', 800, 600, null, false),
         'like' => $faker->randomNumber
