@@ -7,10 +7,11 @@ $factory->define(App\TempatWisata::class, function (Faker $faker) {
         'id_kota' => function(){
           return factory('App\Kota')->create()->id;
         },
-        'nama' =>$faker->city,
-        'telpon'=>$faker->tollFreePhoneNumber,
         'id_kategori' => function(){
           return factory('App\Kategori')->create()->id;
-        }
+        },
+        'nama' =>$faker->city($maxNbChars = 29),
+        'telpon'=>$faker->tollFreePhoneNumber
+        
     ];
 });
