@@ -10,8 +10,8 @@
 <body>
     <div id="particles-js">
             <div class="btext">
-                    <h1>Kuy Belajar</h1>
-                    <p>Tiada Hari Tanpa Belajar</p>
+                    <h1>Kuy Jalan</h1>
+                    <p>Platform Berbagi Pengalaman liburan</p>
                     <a href="home.html" class="btn">Get Started</a>
             </div>
     </div>
