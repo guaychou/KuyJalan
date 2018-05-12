@@ -49,7 +49,7 @@
                         @else
                          <form action="{{ url()->current() }}">
                         <div class="col-md-11">
-                            <input type="text" name="keyword" class="form-control" placeholder="Search users...">
+                            <input type="text" name="keyword" class="form-control" placeholder="Search...">
                         </div>
                         <div class="col-md-1">
                         
