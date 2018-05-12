@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function paginate(\Illuminate\Http\Request $request){
+    $users = User::when($request->keyword, function ($query) use ($request) {
+        $query->where('email', 'like', "%{$request->keyword}%")->orWhere('name', 'like', "%{$request->keyword}%");
+    })->get();
+    return view('users.paginate', compact('users'));
+}
 }
