@@ -13,14 +13,13 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('getstarted');
 });
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'PostController@index');
-Route::get('/kevin1', 'CommentController@test');
-
+Route::get('/comment', 'CommentController@index');
 Auth::routes();
 
 /*
