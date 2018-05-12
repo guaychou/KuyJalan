@@ -11,15 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+/*
+|--------------------------------------------------------------------------
+| Post Routes
+|--------------------------------------------------------------------------
+|
+*/
+Route::name('post.')->group(function () {
+    Route::get('/', 'PostController@index')->name('index');
+    Route::get('/post/create', 'PostController@create')->name('create');
+    Route::post('/post', 'PostController@store')->name('store');
 });
 
-Auth::routes();
 Route::get('/getstarted', 'GetStartedController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/profile', 'PostController@index');
 // Route::get('/kevin1', 'CommentController@test');
 
 
-Route::resource('/post', 'PostController');
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('api/kota/all', 'KotaController@getAllKota')->name('api.kota');
+Route::get('api/wisata/{id}', 'TempatWisataController@getWisata')->name('api.wisata');
