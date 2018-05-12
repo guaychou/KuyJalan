@@ -13,10 +13,6 @@
 
 Auth::routes();
 
-// Route::get('/profile', 'PostController@index');
-// Route::get('/kevin1', 'CommentController@test');
-
-
 /*
 |--------------------------------------------------------------------------
 | Post Routes
@@ -28,9 +24,6 @@ Route::name('post.')->group(function () {
     Route::get('/post/create', 'PostController@create')->name('create');
     Route::post('/post', 'PostController@store')->name('store');
 });
-
-
-
 
 /*
 |--------------------------------------------------------------------------
