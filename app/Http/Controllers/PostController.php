@@ -25,7 +25,8 @@ class PostController extends Controller
             $posts = Post::all();
             return view('index', compact('posts'));
         }
-        return view('welcome');
+        return view('getstarted');
+        
         
     }
 
