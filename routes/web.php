@@ -24,12 +24,3 @@ Route::name('post.')->group(function () {
     Route::get('/post/create', 'PostController@create')->name('create');
     Route::post('/post', 'PostController@store')->name('store');
 });
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-*/
-Route::get('api/kota/all', 'KotaController@getAllKota')->name('api.kota');
-Route::get('api/wisata/{id}', 'TempatWisataController@getWisata')->name('api.wisata');

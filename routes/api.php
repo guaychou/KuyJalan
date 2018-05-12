@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+Route::get('kota/all', 'KotaController@getAllKota')->name('api.kota');
+Route::get('wisata/{id}', 'TempatWisataController@getWisata')->name('api.wisata');
