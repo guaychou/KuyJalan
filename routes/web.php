@@ -11,6 +11,16 @@
 |
 */
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'PostController@index');
+Route::get('/kevin1', 'CommentController@test');
+
 Auth::routes();
 
 /*
@@ -33,3 +43,4 @@ Route::name('post.')->group(function () {
 */
 Route::get('api/kota/all', 'KotaController@getAllKota')->name('api.kota');
 Route::get('api/wisata/{id}', 'TempatWisataController@getWisata')->name('api.wisata');
+
