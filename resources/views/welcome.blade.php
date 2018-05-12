@@ -79,8 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                Hello World Minna-San
-                </div>
+            Kuy    Jalan                 </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
