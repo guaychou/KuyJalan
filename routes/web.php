@@ -25,12 +25,6 @@ Route::name('post.')->group(function () {
     Route::post('/post', 'PostController@store')->name('store');
 });
 
-Route::get('/getstarted', 'GetStartedController@index');
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/profile', 'PostController@index');
-// Route::get('/kevin1', 'CommentController@test');
-
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
