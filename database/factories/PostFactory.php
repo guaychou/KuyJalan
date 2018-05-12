@@ -11,7 +11,7 @@ $factory->define(App\Post::class, function (Faker $faker) {
         return factory('App\TempatWisata')->create()->id;
       },
         'caption' => $faker->paragraph,
-        'image' => 'posts/' . $faker->image('public/storage/posts', 800, 600, null, false),
+        'image' => 'posts/default.jpg',
         'like' => $faker->randomNumber
     ];
 });
