@@ -12,11 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('getstarted');
 });
 
 Auth::routes();
-Route::get('/getstarted', 'GetStartedController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'PostController@index');
 Route::get('/kevin1', 'CommentController@test');

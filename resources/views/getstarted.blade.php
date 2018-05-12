@@ -12,7 +12,7 @@
             <div class="btext">
                     <h1>Kuy Jalan</h1>
                     <p>Platform Berbagi Pengalaman liburan</p>
-                    <a href="home.html" class="btn">Get Started</a>
+                    <a href="{{ url('/home') }}" class="btn">Get Started</a>
             </div>
     </div>
    
