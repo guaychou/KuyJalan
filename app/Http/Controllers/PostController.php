@@ -12,6 +12,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $posts = Post::all();
@@ -25,7 +30,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.formAddPost');
     }
 
     /**
@@ -47,7 +52,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        
     }
 
     /**
