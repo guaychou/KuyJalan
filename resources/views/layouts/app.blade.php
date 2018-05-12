@@ -54,7 +54,7 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
-                         <form action="{{ url()->current() }}">
+                         <form action="{{ route('post.search')}}">
                         <div class="col-md-11">
                             <input type="text" name="keyword" class="form-control" placeholder="Search...">
                         </div>

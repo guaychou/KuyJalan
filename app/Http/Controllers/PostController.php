@@ -115,4 +115,10 @@ class PostController extends Controller
     {
         
     }
+    public function search(Request $request){
+        $posts = Post::when($request->keyword, function ($query) use ($request) {
+            $query->where('caption', 'like', "%{$request->keyword}%");
+                })->get();
+                return view('index', compact('posts'));
+    }
 }

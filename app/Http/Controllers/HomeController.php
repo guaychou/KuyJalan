@@ -25,10 +25,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function paginate(\Illuminate\Http\Request $request){
-    $posts = post::when($request->keyword, function ($query) use ($request) {
-        $query->where('caption', 'like', "%{$request->keyword}%");
-     })->get();
-    return view('posts.paginate', compact('posts'));
-}
+    
 }
