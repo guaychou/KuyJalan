@@ -8,20 +8,45 @@
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.js"></script>
 </head>
+<style>
+
+    .centered{
+        left : 6cm;
+    }
+    .image{
+        width : 40px;
+        height : 40px;
+        si
+    }
+    .ui.menu{
+        background: #4545FF  ;
+    }
+    header{
+        position: fixed;
+        width: 100%;
+    }
+</style>
 <body>
-<header>
-<div class="ui menu">
-        <a href="#"><div class="home icon"></div></a>
-        <div class="right menu">
-        <div class="ui category search">
-  <div class="ui icon input">
-    <input class="prompt" placeholder="Search animals..." type="text">
-    <i class="search icon"></i>
-  </div>
-  <div class="results"></div>
-</div>
-        </div>
+
+<header ><div class="ui menu">
+  <a class="item">
+    <i class="large home icon"></i>
+  </a>
+  
+    <img src="facebook.png" class="ui centered image" alt="" >
+
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input placeholder="Search..." type="text">
+        <i class="search link icon"></i>
+      </div>
     </div>
+    <a class="ui item ">
+    <i class="white large user circle icon"></i>
+    </a>
+  </div>
+</div>
 </header>
     <br>
 
