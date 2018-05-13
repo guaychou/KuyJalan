@@ -16,7 +16,7 @@ class CreateTempatWisatasTable extends Migration
         Schema::create('tempat_wisatas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_kota')->unsigned();
-            $table->string('nama',30);
+            $table->string('nama_tempat_wisata',30);
             $table->string('telpon',20);
             $table->integer('id_kategori')->unsigned();
             $table->timestamps();

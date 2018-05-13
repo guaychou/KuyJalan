@@ -3,6 +3,6 @@
 use Faker\Generator as Faker;
 $factory->define(App\Kota::class, function (Faker $faker) {
     return [
-      'nama' => $faker->state
+      'nama_kota' => $faker->state
     ];
 });

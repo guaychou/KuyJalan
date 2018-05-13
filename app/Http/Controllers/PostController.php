@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Auth;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     /**
@@ -116,9 +116,17 @@ class PostController extends Controller
         
     }
     public function search(Request $request){
-        $posts = Post::when($request->keyword, function ($query) use ($request) {
-            $query->where('caption', 'like', "%{$request->keyword}%");
-                })->get();
-                return view('index', compact('posts'));
+        $output=DB::table('users')
+        ->join('posts', 'users.id', '=', 'posts.user_id')
+        ->join('tempat_wisatas', 'tempat_wisatas.id', '=', 'posts.wisata_id')
+        ->join('kategoris','kategoris.id','=','tempat_wisatas.id_kategori')
+        ->join('kotas','kotas.id','=','tempat_wisatas.id_kota')
+        ->select('users.name','posts.*','kategoris.*','kotas.*')
+        ->where('posts.caption', 'like', "%{$request->keyword}%")
+        ->orWhere('kategoris.nama_kategori' ,'like',"%{$request->keyword}%")
+        ->orWhere('kotas.nama_kota' ,'like',"%{$request->keyword}%")
+        ->orWhere('tempat_wisata.nama_tempat_wisata' ,'like',"%{$request->keyword}%")
+        ->get();
+        return view('index', compact('output'));
     }
 }

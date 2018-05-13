@@ -4,6 +4,6 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Kategori::class, function (Faker $faker) {
     return [
-        'nama'=>$faker->name($maxNbChars = 30)
+        'nama_kategori'=>$faker->name($maxNbChars = 30)
     ];
 });
