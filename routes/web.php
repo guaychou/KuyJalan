@@ -11,6 +11,16 @@
 |
 */
 
+
+Route::get('/', function () {
+    return view('getstarted');
+});
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'PostController@index');
+Route::get('/comment', 'CommentController@index');
+
 Auth::routes();
 
 /*
@@ -23,4 +33,6 @@ Route::name('post.')->group(function () {
     Route::get('/', 'PostController@index')->name('index');
     Route::get('/post/create', 'PostController@create')->name('create');
     Route::post('/post', 'PostController@store')->name('store');
+    Route::get('/search', 'PostController@search')->name('search');
+
 });
