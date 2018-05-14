@@ -36,13 +36,3 @@ Route::name('post.')->group(function () {
     Route::get('/search', 'PostController@search')->name('search');
 
 });
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-*/
-Route::get('api/kota/all', 'KotaController@getAllKota')->name('api.kota');
-Route::get('api/wisata/{id}', 'TempatWisataController@getWisata')->name('api.wisata');
-

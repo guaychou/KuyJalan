@@ -70,7 +70,7 @@ $(document).ready(function(){
     $.getJSON(url, function (data) {
 
         for(var i = 0; i < data.kotas.length; i++){
-            dropdown.append($('<option></option>').attr('value', data.kotas[i].id).text(data.kotas[i].nama));
+            dropdown.append($('<option></option>').attr('value', data.kotas[i].id).text(data.kotas[i].nama_kota));
         }
 
     });
@@ -83,7 +83,7 @@ $(document).ready(function(){
         $.getJSON(url, function (data) {
 
             for(var i = 0; i < data.wisatas.length; i++){
-                dropdown1.append($('<option></option>').attr('value', data.wisatas[i].id).text(data.wisatas[i].nama));
+                dropdown1.append($('<option></option>').attr('value', data.wisatas[i].id).text(data.wisatas[i].nama_tempat_wisata));
             }
 
         });

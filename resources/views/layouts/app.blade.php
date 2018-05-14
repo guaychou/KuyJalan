@@ -9,7 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
-    <link rel="icon" href="kuyjalan.png">
+    <link rel="icon" href="{{ asset('imgs/kuyjalan.png') }}">
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -40,7 +41,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
             <div class="ui small image">
-                <img src="kuyjalan.png">
+                <a  href="{{ url('/') }}" ><img src="{{ asset('imgs/kuyjalan.png') }}" style="height: 50px;"></a>
             </div>
             
                 <a class="red navbar-brand" href="{{ url('/') }}">
