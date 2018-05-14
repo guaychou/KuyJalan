@@ -2,10 +2,14 @@
 @section('content')
 <div style="margin-top: 50px;">
 
-@foreach ($posts as $post)
+@foreach ($output as $out)
    <div>
-        <img src="{{ asset($post->image) }}"><br/>
-        {{ $post->caption }}
+        <img src="{{ asset($out->image) }}"><br/>
+        {{$out->nama_tempat_wisata}}
+        {{$out->name }}<br>
+        {{$out->caption}}<br>
+        {{$out->nama_kota}}<br>
+        Like : {{$out->like}}<br>
    </div> 
     
 @endforeach

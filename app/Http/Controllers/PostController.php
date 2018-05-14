@@ -22,8 +22,14 @@ class PostController extends Controller
     {
         if (Auth::user())
         {
-            $posts = Post::all();
-            return view('index', compact('posts'));
+            $output=DB::table('users')
+            ->join('posts', 'users.id', '=', 'posts.user_id')
+            ->join('tempat_wisatas', 'tempat_wisatas.id', '=', 'posts.wisata_id')
+            ->join('kategoris','kategoris.id','=','tempat_wisatas.id_kategori')
+            ->join('kotas','kotas.id','=','tempat_wisatas.id_kota')
+            ->select('users.name','posts.*','kategoris.*','kotas.*','tempat_wisatas.*')
+            ->get();
+            return view('index', compact('output'));
         }
         return view('getstarted');
         
@@ -121,11 +127,11 @@ class PostController extends Controller
         ->join('tempat_wisatas', 'tempat_wisatas.id', '=', 'posts.wisata_id')
         ->join('kategoris','kategoris.id','=','tempat_wisatas.id_kategori')
         ->join('kotas','kotas.id','=','tempat_wisatas.id_kota')
-        ->select('users.name','posts.*','kategoris.*','kotas.*')
+        ->select('users.name','posts.*','kategoris.*','kotas.*','tempat_wisatas.*')
         ->where('posts.caption', 'like', "%{$request->keyword}%")
         ->orWhere('kategoris.nama_kategori' ,'like',"%{$request->keyword}%")
         ->orWhere('kotas.nama_kota' ,'like',"%{$request->keyword}%")
-        ->orWhere('tempat_wisata.nama_tempat_wisata' ,'like',"%{$request->keyword}%")
+        ->orWhere('tempat_wisatas.nama_tempat_wisata' ,'like',"%{$request->keyword}%")
         ->get();
         return view('index', compact('output'));
     }
