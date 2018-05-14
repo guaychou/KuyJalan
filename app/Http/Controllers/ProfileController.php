@@ -16,7 +16,7 @@ class ProfileController extends Controller
             ->join('tempat_wisatas', 'tempat_wisatas.id', '=', 'posts.wisata_id')
             ->join('kategoris','kategoris.id','=','tempat_wisatas.id_kategori')
             ->join('kotas','kotas.id','=','tempat_wisatas.id_kota')
-            ->select('users.name','posts.*','kategoris.*','kotas.*','tempat_wisatas.*')
+            ->select('users.name','users.point','','posts.*','kategoris.*','kotas.*','tempat_wisatas.*')
             ->where('users.name','=',$name)
             ->get();
 
