@@ -22,7 +22,7 @@ class ProfileController extends Controller
 
             $count=DB::table('users')
             ->join('posts', 'users.id', '=', 'posts.user_id')
-            ->count()->get();
+            ->count();
             return view('profile', compact('user','count'));
         }
     }
