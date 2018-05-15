@@ -10,7 +10,7 @@ class ProfileController extends Controller
     public function index(){
         if (Auth::user())
         {
-            $name=Auth::user()->username;
+            $name=Auth::user()->name;
             $user=DB::table('users')
             ->join('posts', 'users.id', '=', 'posts.user_id')
             ->join('tempat_wisatas', 'tempat_wisatas.id', '=', 'posts.wisata_id')

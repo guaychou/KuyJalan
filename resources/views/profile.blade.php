@@ -1,12 +1,3 @@
-@extends('layouts.app')
-@section('content')
-@foreach($user as $a)
-<p>{{$a->name}}</p><br>
-<p>{{$a->email}}</p><br>
-@endforeach
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
