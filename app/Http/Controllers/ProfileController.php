@@ -24,7 +24,12 @@ class ProfileController extends Controller
             ->join('posts', 'users.id', '=', 'posts.user_id')
             ->where('users.name','=',$name)
             ->count();
-            return view('profile', compact('user','count'));
+            $poin=DB::table('users')
+            ->join('posts', 'users.id', '=', 'posts.user_id')
+            ->select('users.point','post.*')
+            ->where('users.name','=',$name)
+            ->sum('users.point');
+            return view('profile', compact('user','count','poin'));
         }
     }
 }
