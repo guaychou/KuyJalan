@@ -29,6 +29,7 @@
             background : #4831af;
             position : fixed;
             width : 100%;
+
             z-index:3;
         }
         .red.navbar-brand{
@@ -95,10 +96,13 @@
                                         
                                                      <i class="sign out alternate icon"></i> {{ __('Logout') }}
                                     </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                        <i class="user icon"></i> {{ __('Profile') }}
+                                    <a class="dropdown-item" href="{{ url('/profile') }}">
+
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
