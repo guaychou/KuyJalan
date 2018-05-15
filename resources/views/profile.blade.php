@@ -1,11 +1,9 @@
-
+@extends('layouts.app')
+@section('content')
 @foreach($user as $a)
 <p>{{$a->name}}</p><br>
 <p>{{$a->email}}</p><br>
 @endforeach
-
-
-
 
 
 
@@ -17,125 +15,150 @@
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
 <scrip src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.js"/>
-<body style="background-color: #CFCCCC">
-<div class="ui grid container">
-  <div class="sixteen wide column" style="background-color: #D0B9B9">
-  	<h1 style="font-family: courier">KUY JALAN</h1>
+<body>
+<div class="ui grid">
+  <div class="sixteen wide column" style="background-color: blue">
+    
   </div>
-  <div class="sixteen wide column" style="background-color: #EEDEDE">
-  	<div class="ui secondary  menu">
-  <a class="active item">
-    Profile
-  </a>
-  <a class="item">
-    Messages
-  </a>
-  <a class="item">
-    Friends
-  </a>
-  <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search...">
-        <i class="search link icon"></i>
-      </div>
-    </div>
-    <a class="ui item">
-      Logout
-    </a>
-  </div>
-</div>
-  </div>
-  <div class="sixteen wide column">
-  	<div class="ui items">
-  <div class="item">
-    <div class="ui small image">
-      <img src="images/foto.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Yusuf Saputra</div>
-      <div class="meta">
-      	
 
-<div class="ui labeled button" tabindex="0">
+
+  <div class="four wide column" style="background-color: white">
+    <div class="ui centered card">
+  <div class="image">
+    <img src="/images/foto.jpg">
+  </div>
+  <div class="content">
+    <a class="header">{{ Auth::user()->name }}</a>
+    <div class="ui labeled button" tabindex="0">
   <div class="ui blue button">
     <i class="pointing icon"></i> Point
   </div>
   <a class="ui basic left pointing blue label">
-    1,048
-  </a>
+    {{$count}}
+     </a>
+    
+    
+    
 </div>
 
-      	<button class="ui green button">Follow</button>
-      </div>
-      <div class="detail">
-      	<div class="ui left labeled button" tabindex="0">
-  <a class="ui basic right pointing label">
-    198
-  </a>
-  <div class="ui button">
-    Post
+      <div class="post">
+        <div class="ui button">
+    <i class="pointing icon"></i> Post
   </div>
-</div> 
-<div class="ui left labeled button" tabindex="0">
-  <a class="ui basic right pointing label">
-    2,048
+  <a class="ui basic left pointing blue label">
+    {{$count}}
   </a>
-  <div class="ui button">
-    Followers
-  </div>
 </div> 
-<div class="ui left labeled button" tabindex="0">
-  <a class="ui basic right pointing label">
-    1,098
-  </a>
-  <div class="ui button">
-    Following
+
   </div>
-</div> 
-      </div>
-      <div class="description">
-        <p></p>
-      </div>
+</div>
+
+  </div>
+
+
+  <div class="twelve wide column" style="background-color: grey">
+    
+      <div class="ui centered card" style="width: 600px">
+  <div class="content">
+    <div class="right floated meta">14h</div>
+    <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> Elliot
+  </div>
+  <div class="image">
+    <img>
+  </div>
+  <div class="content">
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      17 likes
+    </span>
+    <i class="comment icon"></i>
+    3 comments
+  </div>
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
     </div>
   </div>
 </div>
+
+<div class="ui centered card" style="width: 600px">
+  <div class="content">
+    <div class="right floated meta">14h</div>
+    <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> Elliot
   </div>
-  <div class="sixteen wide column">
-  	<div class="ui three stackable cards">
-  <div class="card">
-    <div class="image">
-      <img src="images/foto.jpg">
-    </div>
+  <div class="image">
+    <img>
   </div>
-  <div class="card">
-    <div class="image">
-      <img src="images/foto.jpg">
-    </div>
+  <div class="content">
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      17 likes
+    </span>
+    <i class="comment icon"></i>
+    3 comments
   </div>
-  <div class="card">
-    <div class="image">
-      <img src="images/foto.jpg">
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img src="images/foto.jpg">
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img src="images/foto.jpg">
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img src="images/foto.jpg">
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
     </div>
   </div>
 </div>
+<div class="ui centered card" style="width: 600px">
+  <div class="content">
+    <div class="right floated meta">14h</div>
+    <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> Elliot
   </div>
-  <div class="sixteen wide column"></div>
+  <div class="image">
+    <img>
+  </div>
+  <div class="content">
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      17 likes
+    </span>
+    <i class="comment icon"></i>
+    3 comments
+  </div>
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
+    </div>
+  </div>
 </div>
+<div class="ui centered card" style="width: 600px">
+  <div class="content">
+    <div class="right floated meta">14h</div>
+    <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> Elliot
+  </div>
+  <div class="image">
+    <img>
+  </div>
+  <div class="content">
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      17 likes
+    </span>
+    <i class="comment icon"></i>
+    3 comments
+  </div>
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
+    </div>
+  </div>
+</div>
+
+    
+
+
+  </div>
+  
 </body>
+    
+
 </html>
+@endsection

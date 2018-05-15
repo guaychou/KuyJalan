@@ -29,6 +29,7 @@
             background : #4831af;
             position : fixed;
             width : 100%;
+            z-index: 3;
         }
         .navbar-brand{
             text: white;
