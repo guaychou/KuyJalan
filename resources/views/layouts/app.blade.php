@@ -29,10 +29,17 @@
             background : #4831af;
             position : fixed;
             width : 100%;
-            z-index: 3;
+
+            z-index:3;
         }
-        .navbar-brand{
-            text: white;
+        .red.navbar-brand{
+            color:white;
+            font-family: 'Allerta Stencil';font-size: 20px;
+            margin-left:3px;
+        }
+        .nav-link{
+            color:white;
+            font-family: 'Allerta Stencil';font-size: 20px;
         }
         
     </style>
@@ -44,7 +51,6 @@
             <div class="ui small image">
                 <a  href="{{ url('/') }}" ><img src="{{ asset('imgs/kuyjalan.png') }}" style="height: 50px;"></a>
             </div>
-            
                 <a class="red navbar-brand" href="{{ url('/') }}">
                     Kuy Jalan
                 </a>
@@ -68,15 +74,18 @@
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
                          <form action="{{ route('post.search')}}">
-                        <div class="col-md-11">
-                            <input type="text" name="keyword" class="form-control" placeholder="Search...">
-                        </div>
-                        <div class="col-md-1">
                         
-                        </div>
+                            <div class="ui search">
+                                <div class="ui icon input">
+                                <input class="prompt" name="keyword" placeholder="search.." type="text">
+                                    <i class="search icon"></i>
+                                </div>
+                            <div class="results"></div>
+                            </div>
                             </form>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -84,10 +93,16 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        
+                                                     <i class="sign out alternate icon"></i> {{ __('Logout') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                       <i class="user icon"></i> {{ __('Profile') }}
                                     <a class="dropdown-item" href="{{ url('/profile') }}">
-                                        {{ __('Profile') }}
+
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
