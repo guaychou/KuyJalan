@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,9 @@
     <i class="pointing icon"></i> Point
   </div>
   <a class="ui basic left pointing blue label">
-    {{$count}}
+    @foreach ($user as $a)
+{{$a->point}}
+@endforeach
   </a>
 </div> 
       <div class="post">
@@ -31,7 +35,7 @@
     <i class="pointing icon"></i> Post
   </div>
   <a class="ui basic left pointing blue label">
-    {{$count}}
+  {{$count}}
   </a>
 </div> 
 
