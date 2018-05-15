@@ -90,19 +90,16 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url('/profile') }}"
+                                       >
+                                        
+                                       <i class="sign out alternate icon"></i> {{ __('profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         
                                                      <i class="sign out alternate icon"></i> {{ __('Logout') }}
-                                    </a>
-
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                       <i class="user icon"></i> {{ __('Profile') }}
-                                    <a class="dropdown-item" href="{{ url('/profile') }}">
-
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
